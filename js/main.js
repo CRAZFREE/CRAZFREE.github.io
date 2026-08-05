@@ -58,16 +58,16 @@
     
 
     // Typed Initiate
-    if ($('.typed-text-output').length == 1) {
-        var typed_strings = $('.typed-text').text();
-        var typed = new Typed('.typed-text-output', {
-            strings: typed_strings.split(', '),
-            typeSpeed: 100,
-            backSpeed: 20,
-            smartBackspace: false,
-            loop: true
-        });
-    }
+    var strings = $('.typed-text').map(function(){ return $(this).text(); }).get();
+if ($('.typed-text-output').length > 0) {
+  new Typed('.typed-text-output', {
+    strings: strings,
+    typeSpeed: 100,
+    backSpeed: 20,
+    smartBackspace: false,
+    loop: true
+  });
+}
 
 
     // Modal Video
